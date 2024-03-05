@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from './Card';
 import './card.css'; 
+
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -45,6 +46,7 @@ const Characters = () => {
             <li key={character.id} className="card-item">
               <Card
                 key={character.id}
+                id={character.id} // <--- Pasar el id
                 image={character.image}
                 name={character.name}
                 ki={character.ki}
