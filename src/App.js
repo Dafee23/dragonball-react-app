@@ -1,11 +1,17 @@
 import React from 'react';
-import Characters from './components/Characters'; 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Characters from './components/Characters';
+import CharacterDetails from './components/CharactersDetails';
 
 function App() {
   return (
-    <div>
-      <Characters />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Characters />} />
+        <Route path="/character/:id" element={<CharacterDetails />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -51,7 +51,6 @@ const Characters = () => {
                 maxKi={character.maxKi}
                 race={character.race}
                 gender={character.gender}
-                description={character.description}
                 affiliation={character.affiliation}
               />
             </li>

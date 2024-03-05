@@ -1,23 +1,34 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+const CharacterDetails = () => {
+  const { id } = useParams();
+  const [character, setCharacter] = useState(null);
 
-const CharacterDetails = ({ character }) => {
-  // Ya no se define 'characters' aquí
-  const { id, name, image, description, ki, maxKi, race, gender, affiliation } = character;
+  useEffect(() => {
+    const fetchCharacter = async (id) => {
+      const result = await axios.get(`https://dragonball-api.com/api/characters/${id}`);
+      setCharacter(result.data);
+    };
 
-  return (
-    <div className="character-details">
-      <h1>{name}</h1>
-      <img src={image} alt={name} />
-      <p>{description}</p>
-      <ul>
-        <li>Ki: {ki}</li>
-        <li>Max Ki: {maxKi}</li>
-        <li>Raza: {race}</li>
-        <li>Género: {gender}</li>
-        <li>Afiliación: {affiliation}</li>
-      </ul>
-    </div>
-  );
+    fetchCharacter(id);
+  }, [id]);
+
+  if (!character) return null;
+
+  return (
+    <div className="character-details">
+      <h1>{character.name}</h1>
+      <img src={character.image} alt={character.name} />
+      <p>{character.description}</p>
+      <ul>
+        <li>Especie: {character.species}</li>
+        <li>Género: {character.gender}</li>
+        <li>Origen: {character.origin}</li>
+        <li>Ocupación: {character.occupation}</li>
+        <li>Estado: {character.status}</li>
+      </ul>
+    </div>
+  );
 };
-
 export default CharacterDetails;
