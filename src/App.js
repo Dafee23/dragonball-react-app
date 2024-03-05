@@ -6,10 +6,12 @@ import CharacterDetails from './components/CharactersDetails';
 
 function App() {
   return (
+  
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Characters />} />
-        <Route path="/character/:id" element={<CharacterDetails />} />
+        <Route path="/" element={<Characters/>}/>
+        <Route path="/character/:id" element={<CharacterDetails/>} />
+        
       </Routes>
     </BrowserRouter>
   );

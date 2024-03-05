@@ -6,14 +6,14 @@ import './card.css';
 const CharacterDetails = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState(null);
-  console.log('ID recibido en CharacterDetails:', id);
+
   useEffect(() => {
-    const fetchCharacter = async (id) => {
+    const fetchCharacter = async () => {
       const result = await axios.get(`https://dragonball-api.com/api/characters/${id}`);
       setCharacter(result.data);
     };
 
-    fetchCharacter(id);
+    fetchCharacter();
   }, [id]);
 
   if (!character) return null;
@@ -29,9 +29,25 @@ const CharacterDetails = () => {
         <li>Ki: {character.maxKi}</li>
         <li>Ocupación: {character.affiliation}</li>
         <li>Planeta: {character.originPlanet.name}</li>
-        <img src={character.originPlanet.image} alt={character.originPlanet.image}/>
+        <img src={character.originPlanet.image} alt={character.originPlanet.name} />
       </ul>
+
+      {character.transformations.length > 0 && (
+        <div className="transformations">
+          <h2>Transformaciones</h2>
+          <div className="transformations-grid">
+            {character.transformations.map((transformacion) => (
+              <div className="transformation-card" key={transformacion.name}>
+                <h3>{transformacion.name}</h3>
+                <img src={transformacion.image} alt={transformacion.name} />
+                <p>Ki: {transformacion.ki}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
+
 export default CharacterDetails;
