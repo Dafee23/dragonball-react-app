@@ -9,13 +9,15 @@ const Nav = ({
     raceFilter, 
     setRaceFilter, 
     affiliationFilter, 
-    setAffiliationFilter
+    setAffiliationFilter,
+    setCharactersFilter,// Recibe las props
+    setPlanetsFilter,      // Recibe las props
 }) => {
   return (
     <nav>
       <ul>
-        <li><a href="#">Planetas</a></li>
-        <li><a href="#">Personajes</a></li>
+        <li ><a href="#"  onClick={setPlanetsFilter} >Planetas</a></li>
+        <li><a href="#" onClick={setCharactersFilter}>Personajes</a></li>
       </ul>
 
       <div className="filtros">
