@@ -1,0 +1,45 @@
+.filtros {
+    margin-top: 10px;
+  }
+  
+  .filtros li {
+    display: inline-block;
+    padding: 5px;
+  }
+  
+  .filtros li label {
+    margin-right: 5px;
+  }
+  
+  .filtros li select {
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .filtros li input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+  }
+  nav {
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    padding: 10px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    color: #ddd;
+  }

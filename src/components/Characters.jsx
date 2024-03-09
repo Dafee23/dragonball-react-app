@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from './Card';
-import './card.css'; 
+import './card.css';
+import Nav from './Nav';
 
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [searchValue, setSearchValue] = useState('');
+  const [genderFilter, setGenderFilter] = useState('');
+  const [raceFilter, setRaceFilter] = useState('');
+  const [affiliationFilter, setAffiliationFilter] = useState('');
 
   useEffect(() => {
     const fetchCharacters = async () => {
@@ -35,14 +40,35 @@ const Characters = () => {
     fetchCharacters();
   }, []);
 
+  const filteredCharacters = characters.filter((character) => {
+    return (
+      character.name.toLowerCase().includes(searchValue.toLowerCase()) &&
+      (genderFilter === '' || character.gender === genderFilter) &&
+      (raceFilter === '' || character.race === raceFilter) &&
+      (affiliationFilter === '' || character.affiliation === affiliationFilter)
+    );
+  });
+
   return (
     <div>
       <h1>Dragon Ball Characters</h1>
+
+      <Nav 
+        searchValue={searchValue} 
+        setSearchValue={setSearchValue}
+        genderFilter={genderFilter}
+        setGenderFilter={setGenderFilter}
+        raceFilter={raceFilter}
+        setRaceFilter={setRaceFilter}
+        affiliationFilter={affiliationFilter}
+        setAffiliationFilter={setAffiliationFilter}
+      />
+
       {isLoading && <p>Loading...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
-      {!isLoading && !error && characters.length > 0 && (
+      {!isLoading && !error && filteredCharacters.length > 0 && (
         <ul className="characters-list">
-          {characters.map((character) => (
+          {filteredCharacters.map((character) => (
             <li key={character.id} className="card-item">
               <Card
                 key={character.id}
@@ -62,4 +88,5 @@ const Characters = () => {
     </div>
   );
 };
+
 export default Characters;
