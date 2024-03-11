@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import './card.css';
+import CardPlanets from '../Planetas/CardPlanets';
+
 
 const CharacterDetails = () => {
   const { id } = useParams();
@@ -21,7 +23,9 @@ const CharacterDetails = () => {
   return (
     <div className="character-details">
       <h1>{character.name}</h1>
+      <div className='imagenCh'>
       <img src={character.image} alt={character.name} />
+      </div>
       <p>{character.description}</p>
       <ul>
         <li>Especie: {character.race}</li>
@@ -29,7 +33,13 @@ const CharacterDetails = () => {
         <li>Ki: {character.maxKi}</li>
         <li>Ocupación: {character.affiliation}</li>
         <li>Planeta: {character.originPlanet.name}</li>
-        <img src={character.originPlanet.image} alt={character.originPlanet.name} />
+        <li key={character.id} className="card-item">
+              <CardPlanets
+                id={character.originPlanet.id} 
+                name={character.originPlanet.name}
+                image={character.originPlanet.image}
+              />
+            </li>
       </ul>
 
       {character.transformations.length > 0 && (

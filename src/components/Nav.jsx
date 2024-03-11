@@ -4,14 +4,11 @@ import './Nav.css';
 const Nav = ({ 
     searchValue, 
     setSearchValue, 
-    genderFilter, 
     setGenderFilter, 
-    raceFilter, 
     setRaceFilter, 
-    affiliationFilter, 
     setAffiliationFilter,
-    setCharactersFilter,// Recibe las props
-    setPlanetsFilter,      // Recibe las props
+    setCharactersFilter,
+    setPlanetsFilter,      
 }) => {
   return (
     <nav>

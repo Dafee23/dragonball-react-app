@@ -40,6 +40,7 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
 }
 
 .character-header {
@@ -49,7 +50,7 @@
 }
 
 .character-details h1 {
-  font-size: 50px;
+  font-size: 60px;
   margin-right: 20px;
   text-align: center;
 }
@@ -57,8 +58,21 @@
 .character-details img {
   width: 500px;
   height: 500px;
-  
+  margin: auto;
 }
+.imagenCh{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imagenCh img { 
+  display: block;
+}
+.imagenCh li{
+text-decoration: none;
+}
+
+
 
 .character-info {
   line-height: 1.5;
@@ -124,4 +138,24 @@
 .transformationsh2{
   text-align: center;
   font-size: 50px;
+}
+.planet-details h1{
+font-size: 60px;
+text-align: center;
+}
+
+.planet-detailsP{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.planet-detailsP img{
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+.pPrincipal h1{
+  text-align: center;
+  font-size: 60px;
 }

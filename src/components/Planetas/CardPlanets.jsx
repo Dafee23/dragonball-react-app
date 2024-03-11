@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './card.css'; // Asegúrate de tener un archivo card.css 
+import '../Personajes/card.css'; 
 
 const CardPlanets = ({ id, name, isDestroyed, description, image }) => {
   const navigate = useNavigate();

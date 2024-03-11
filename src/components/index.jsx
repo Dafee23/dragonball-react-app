@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Card from './Card';
+import Card from './Personajes/CardCharacters';
 import Nav from './Nav';
-import PlanetList from './PlanetList';
+import PlanetList from './Planetas/PlanetList';
 
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
@@ -59,7 +59,7 @@ const Characters = () => {
   };
 
   return (
-    <div>
+    <div className='pPrincipal'>
       <h1>Dragon Ball</h1>
 
       <Nav 
@@ -71,8 +71,8 @@ const Characters = () => {
         setRaceFilter={setRaceFilter}
         affiliationFilter={affiliationFilter}
         setAffiliationFilter={setAffiliationFilter}
-        setCharactersFilter={setCharactersFilter} // Nueva prop
-        setPlanetsFilter={setPlanetsFilter} // Nueva prop
+        setCharactersFilter={setCharactersFilter} 
+        setPlanetsFilter={setPlanetsFilter} 
       />
 
       {showCharacters && (

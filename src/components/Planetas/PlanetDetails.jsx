@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import './card.css'; // Asegúrate de tener un archivo card.css 
-import Card from './Card';
+import '../Personajes/card.css'; 
+import Card from '../Personajes/CardCharacters';
 
 const PlanetDetails = () => {
   const { id } = useParams(); 
@@ -22,12 +22,13 @@ const PlanetDetails = () => {
   return (
     <div className="planet-details">
       <h1>{planet.name}</h1>
+      <div className='planet-detailsP'>
       <img src={ planet.image}  />
+      </div>
       <ul>
         <li>Descripcion: {planet.description}</li> 
       </ul>
 
-      {/* (OPCIONAL) - Residentes destacados del planeta */}
       {planet.characters && planet.characters.length > 0 && ( 
         <div className="residents">
           <h2>Residentes Notables</h2>

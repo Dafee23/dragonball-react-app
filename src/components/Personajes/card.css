@@ -50,30 +50,30 @@
     }
   }
   .characters-list {
-    display: flex; /* Coloca las cards en una fila */
-    flex-wrap: wrap; /* Permite múltiples filas si no caben */
-    justify-content: space-around; /* Distribuye espacio entre las cards */
-    list-style: none; /* Quita los puntos por defecto de la lista */
-    padding: 0; /* Si deseas quitar espacio alrededor de la lista */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    list-style: none; 
+    padding: 0; 
   }
   
   .card-item {
-    width: 300px; /* Asigna a cada card un ancho específico */
-    margin: 10px; /* Crea separación entre las cards */
+    width: 300px; 
+    margin: 10px; 
   }
 
-  /* Estilo general para toda la página */
+  
 body {
-    background-color: #FF9900; /* Color naranja característico de DBZ */
-    color: #242582; /* Azul oscuro */
-    font-family: 'Arial', sans-serif; /* Fuente básica, puedes cambiarla */
+    background-color: #FF9900; 
+    color: #242582; 
+    font-family: 'Arial', sans-serif; 
     margin: 0;
     padding: 0;
 }
 
-/* Encabezado - header */
+
 header {
-    background-image: url("https://fondosmil.com/fondo/54627.jpg"); /* ¡Busca una imagen de fondo adecuada! */
+    background-image: url("https://fondosmil.com/fondo/54627.jpg"); 
     height: 200px; 
     background-size: cover; 
     background-position: center; 
@@ -82,21 +82,21 @@ header {
 }
 
 header h1 {
-    font-size: 4em; /* Tamaño grande del título */
+    font-size: 4em; 
     text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8); 
-    color: #FFDB4C; /* Amarillo/dorado */ 
+    color: #FFDB4C; 
 }
 
-/* Estilos para las Cards */
+
 .card {
-    /* ... tus estilos existentes para la card ... */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Sombra pronunciada */
+    
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 
 }
 
 
-/* Animaciones Simples */
+
 .card:hover {
-    transform: translateY(-5px) scale(1.03); /* Efecto al pasar el mouse*/
+    transform: translateY(-5px) scale(1.03); 
 }
 
 header h1 {

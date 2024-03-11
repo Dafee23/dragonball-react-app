@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Characters from './components/Characters';
-import CharacterDetails from './components/CharactersDetails';
-import PlanetDetails from './components/PlanetDetails';
+import Characters from './components';
+import CharacterDetails from './components/Personajes/CharactersDetails';
+import PlanetDetails from './components/Planetas/PlanetDetails';
 
 function App() {
   return (
@@ -12,9 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Characters/>}/>
         <Route path="/character/:id" element={<CharacterDetails/>} />
-        <Route path="/planet/:id" element={<PlanetDetails/>} />
-
-        
+        <Route path="/planet/:id" element={<PlanetDetails/>}/>
       </Routes>
     </BrowserRouter>
   );
